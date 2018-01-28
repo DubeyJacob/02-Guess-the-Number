@@ -1,38 +1,33 @@
-# 02-Guess-the-number
-
-Guess the number! This is the second programming assignment for ILS-Z399. The requirements for this assignment are as follows:
-
-* Write a Python program for playing a simple "guess the number" game
-* The program should randomly choose a number and then invite the user to guess the chosen number. 
-* A game is only fun if it holds out a possibility for mastery, so the user will need to be given multiple chances to guess.
-* Try to give the player useful feedback; you can decide how many chances the player will get.
-
-To get a perfect score, you will need to think creatively! Think about ways you can make this project more interesting or fun.
-
-To complete this assignment you will need to understand:
-
-* Python [integers and strings](https://docs.python.org/3.7/library/stdtypes.html)
-* How to [convert a string into an integer](https://stackoverflow.com/questions/379906/parse-string-to-float-or-int)
-* How to generate a [random integer](https://docs.python.org/3.6/library/random.html)
-* How to use basic control structures like [if and else (and elif)](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/ifstatements.html)
-* How to write a [for loop over a range](https://www.learnpython.org/en/Loops)
-* How to [compare](https://www.tutorialspoint.com/python/comparison_operators_example.htm) two numbers in Python
-* How to [accept user input](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/io.html)
-
-I have given you a few lines of code to get started, but you will need to alter guess.py substantially to complete the assignment. Good luck!
-
----
-
-The grading criteria will be as follows:
-
-* [1 point] Assignment turned in on time
-* [1] Repository contains an appropriate software license
-* [2] Repository contains a descriptive README.md
-* [1] Requires Python 3
-* [1] No syntax errors
-* [8] Accomplishes the objective of the assignment
-* [2] No other runtime errors
-* [2] Validates user input (if necessary)
-* [2] Adds interesting features (beyond the scope of the assignment)
-
-20 points total
+The goal of this program is to have a user try to guess a number between 1 and 20 within 5 guesses. The
+player also has the opportunity to input their own name to make the game seem more intimate.
+The import sys,random command imports those specific libraries to this program. The random library is the
+most important to this program. Before getting into any coding, there were variables that needed to be 
+initially defined.In the lines 8 and 9, variables 'guesses' and 'guess_range' were defined. 'guesses' was
+defined as 0 so that when providing feedback to the player during the game, the guess counter would
+increase accordingly. Next I wanted to make the game more intimate by asking the player for their name.
+Whatever their input, it would also be defined as Name which would be included in future strings. The
+next block defined the number as a random integer between 1 and the 'guess_range' which in this case was
+20. The next block is a short description of the rules in a very fun manner putting the situation in terms
+apples instead of just numbers. In it it will also display the name the player gave at the beginning of
+the game. Then it will print an instruction of 'Guess how many apples are in my bag. You have 5 guesses.'
+Next comes the loop. It is a while loop for as long as the guesses < 5. As long as guesses are less 5,
+the user will be able to input an answer with the guess = input() command. 'Guess' is then converted
+into an integer. There is then a command that makes the guess counter increase by one for every time
+through the loop. There are then several conditions organized by the 'if' function. The first of which
+is if the guess is < the number. If this is the case then the 'guesses' is converted into a string
+so that it can be inserted in the string that tells the player that they guessed too low and to try again.
+The guesses is converted into a string here so that it shows up. Afterword it is then converted back into
+an integer and the loop starts again from the top. The next condition is if the guess is > the number. The
+same set of commands are in place in terms of converting the 'guesses' into a string. The print then tells
+the player that their guess was too high and the 'guesses' will be inserted as well to tell the player
+how many guesses they have made. The 'guesses' is then converted back into an integer and the loop starts
+again. The last condition is if the guess is equal to the number in which case the loop breaks and moves on
+to the next part of code. The other way the loop would break is if the guesses exceed or meet the total of
+5. The expression would no longer be True and would then move on in the code. At this point if the number
+is correct then the 'guesses' will be converted to string and the program will print a string that
+congratulates the player (using the inputed name) and tells them how many guesses it took them. At this point
+if the number was still not correct after the 5 guesses then the number will be converted to string and then
+a string will print telling the player what the correct answer was. In the program there is an except command
+where if the player inputs an answer that is not a whole number the game will tell the player to enter a 
+whole number. This function is currently not working as once something that is not a whole number is entered
+the program then ends. This is something I am still looking into on how to fix it.
